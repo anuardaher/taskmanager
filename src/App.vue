@@ -1,17 +1,30 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="xl:mx-56 2xl:mx-96 min-h-screen bg-gray-100">
+    <div class="header">
+      <Header />
+    </div>
+    <div class="body md:p-12 px-2 py-4">
+      <div class="add-task">
+        <AddTask />
+      </div>
+      <div class="todo-list">
+        <TodoList />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from "./components/Header"
+import AddTask from "./components/AddTask"
+import TodoList from "./components/TodoList"
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
+    Header,
+    AddTask,
+    TodoList
   }
 }
 </script>
@@ -19,10 +32,14 @@ export default {
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  height: 100%;
+}
+
+:focus {
+  outline: 1px solid seagreen;
+}
+
+:disabled {
+  opacity: 0.5;
 }
 </style>
